@@ -25,14 +25,37 @@ class RainbowManager: RCTEventEmitter {
   @objc func logOut() {
     print("%@ log out ne")
     ServicesManager.sharedInstance().loginManager.disconnect()
+
     ServicesManager.sharedInstance().loginManager.resetAllCredentials()
+  }
+  
+  @objc func getConversations(_ callback: RCTResponseSenderBlock) {
+    let converationManager = ServicesManager.sharedInstance().conversationsManagerService
+    
+    if let conversations = converationManager?.conversations {
+      callback([conversations.map{HelperMethods.JSONfrom(conversation: $0)}])
+    } else {
+      callback([[]])
+    }
+//      let conversation = conversations.first {
+//      _ = converationManager?.sendMessage("test ne", fileAttachment: nil, to: conversation, completionHandler: { (message, error) in
+//        if let error = error {
+//          print(error.localizedDescription)
+//
+//        } else {
+//          print("%@ sent mess", message ?? "nil message")
+//        }
+//      }, attachmentUploadProgressHandler: { (_, _, _) in
+//        print("%@ sent mess with file")
+//      })
+//    }
   }
   
   @objc func getContactList(_ callback: @escaping RCTResponseSenderBlock) {
     let contactMan = ServicesManager.sharedInstance().contactsManagerService
     if let contacts = contactMan?.contacts {
       print("%@ contacts", contacts)
-      let array = contacts.map{HelperMethods.JSON(from: $0)}
+      let array = contacts.map{HelperMethods.JSONfrom(contact: $0)}
       callback([array])
     }
   }
@@ -97,7 +120,6 @@ class RainbowManager: RCTEventEmitter {
       "name": "Did login"
     ]
     self.sendEvent(withName: "DidLoginRainbow", body: ret )
-   
   }
   
   @objc func failedToAuthenticate(notification : NSNotification) {

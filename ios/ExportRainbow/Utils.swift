@@ -11,7 +11,20 @@ import Rainbow
 @objc(HelperMethods)
 class HelperMethods: NSObject {
   //MARK: - Helper methods
-  @objc static func JSON(from contact: Contact?) -> [String: Any] {
+  @objc static func JSONfrom(conversation: Conversation?) -> [String: Any]  {
+    guard let conversation = conversation else {
+      return [:]
+    }
+    var dictionary: [String: Any] = [:]
+    dictionary["type"] = conversation.type
+    dictionary["rainbowID"] = conversation.peer.rainbowID
+    dictionary["lastMessage"] = conversation.lastMessage.body
+    dictionary["lastUpdateDate"] = conversation.lastUpdateDate.timeIntervalSince1970
+    print("%@ conversation",conversation.type,conversation.peer.rainbowID,conversation.lastMessage,conversation.lastUpdateDate)
+    return dictionary
+  }
+  
+  @objc static func JSONfrom(contact: Contact?) -> [String: Any] {
     guard let contact = contact else {
       return [:]
     }

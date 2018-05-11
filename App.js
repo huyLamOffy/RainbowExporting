@@ -21,9 +21,9 @@ var subscription = rainbowManagerEvt.addListener(
       (progress) => {
         console.log("DidLoginRainbow")
         console.log(progress)
-        RainbowManager.getContactList((contacts) => {
-            console.log(contacts);
-            RainbowManager.touchContact('test', contacts[0].rainbowID)
+        RainbowManager.getConversations((conversations) => {
+          console.log('conversations');
+          console.log(conversations);
         });
       }
     );

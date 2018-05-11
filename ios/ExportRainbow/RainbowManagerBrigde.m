@@ -23,4 +23,5 @@ RCT_EXTERN_METHOD(loginWith:(NSString *)username password:(NSString *)password)
 RCT_EXTERN_METHOD(logOut)
 RCT_EXTERN_METHOD(touchContact: (NSString *)type contactId:(NSString *)contactId)
 RCT_EXTERN_METHOD(getContactList:(RCTResponseSenderBlock *)callback)
+RCT_EXTERN_METHOD(getConversations:(RCTResponseSenderBlock *)callback)
 @end
