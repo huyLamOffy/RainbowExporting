@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.1 (swiftlang-902.0.48 clang-902.0.37.1)"
+options: "0bd5a2cf6c63142796721dcd37c517ba"
+build_time: [1525926002, 169880000]
+inputs:
+  "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/ExportRainbow/RainbowManager.swift": [1525925295, 0]

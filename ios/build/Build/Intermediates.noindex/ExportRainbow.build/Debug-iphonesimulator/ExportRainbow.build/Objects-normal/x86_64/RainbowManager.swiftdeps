@@ -1,0 +1,484 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RainbowManager"
+provides-nominal:
+- "13ExportRainbow0B7ManagerC"
+provides-member:
+- ["13ExportRainbow0B7ManagerC", ""]
+provides-dynamic-lookup:
+- "didLogin"
+- "failedToAuthenticate"
+- "loginWith"
+depends-top-level:
+- !private "!"
+- !private "DispatchQueue"
+- !private "NSLog"
+- "NSNotification"
+- "NSObject"
+- !private "NotificationCenter"
+- "RainbowManager"
+- !private "ServicesManager"
+- "String"
+- !private "StringLiteralType"
+- !private "Thread"
+- !private "kLoginManagerDidFailedToAuthenticate"
+- !private "kLoginManagerDidLoginSucceeded"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "DispatchQueue"]
+- !private ["s7CVarArgP", "NSLog"]
+- !private ["s7CVarArgP", "NSNotification"]
+- !private ["s7CVarArgP", "Name"]
+- !private ["s7CVarArgP", "NotificationCenter"]
+- !private ["s7CVarArgP", "ServicesManager"]
+- !private ["s7CVarArgP", "Thread"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "addObserver"]
+- !private ["s7CVarArgP", "connect"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "didLogin"]
+- !private ["s7CVarArgP", "failedToAuthenticate"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isMainThread"]
+- !private ["s7CVarArgP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["s7CVarArgP", "kLoginManagerDidLoginSucceeded"]
+- !private ["s7CVarArgP", "loginManager"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "setUsername"]
+- !private ["s7CVarArgP", "sharedInstance"]
+- !private ["s7CVarArgP", "sync"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
+- !private ["s28CustomDebugStringConvertibleP", "NSLog"]
+- !private ["s28CustomDebugStringConvertibleP", "NSNotification"]
+- !private ["s28CustomDebugStringConvertibleP", "Name"]
+- !private ["s28CustomDebugStringConvertibleP", "NotificationCenter"]
+- !private ["s28CustomDebugStringConvertibleP", "ServicesManager"]
+- !private ["s28CustomDebugStringConvertibleP", "Thread"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "addObserver"]
+- !private ["s28CustomDebugStringConvertibleP", "connect"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "didLogin"]
+- !private ["s28CustomDebugStringConvertibleP", "failedToAuthenticate"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isMainThread"]
+- !private ["s28CustomDebugStringConvertibleP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["s28CustomDebugStringConvertibleP", "kLoginManagerDidLoginSucceeded"]
+- !private ["s28CustomDebugStringConvertibleP", "loginManager"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "setUsername"]
+- !private ["s28CustomDebugStringConvertibleP", "sharedInstance"]
+- !private ["s28CustomDebugStringConvertibleP", "sync"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "DispatchQueue"]
+- !private ["s23CustomStringConvertibleP", "NSLog"]
+- !private ["s23CustomStringConvertibleP", "NSNotification"]
+- !private ["s23CustomStringConvertibleP", "Name"]
+- !private ["s23CustomStringConvertibleP", "NotificationCenter"]
+- !private ["s23CustomStringConvertibleP", "ServicesManager"]
+- !private ["s23CustomStringConvertibleP", "Thread"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "addObserver"]
+- !private ["s23CustomStringConvertibleP", "connect"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "didLogin"]
+- !private ["s23CustomStringConvertibleP", "failedToAuthenticate"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isMainThread"]
+- !private ["s23CustomStringConvertibleP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["s23CustomStringConvertibleP", "kLoginManagerDidLoginSucceeded"]
+- !private ["s23CustomStringConvertibleP", "loginManager"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "setUsername"]
+- !private ["s23CustomStringConvertibleP", "sharedInstance"]
+- !private ["s23CustomStringConvertibleP", "sync"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["So14DispatchObjectC", "main"]
+- !private ["So14DispatchObjectC", "sync"]
+- !private ["So13DispatchQueueC", "main"]
+- !private ["So13DispatchQueueC", "sync"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "DispatchQueue"]
+- !private ["s9EquatableP", "NSLog"]
+- !private ["s9EquatableP", "NSNotification"]
+- !private ["s9EquatableP", "Name"]
+- !private ["s9EquatableP", "NotificationCenter"]
+- !private ["s9EquatableP", "ServicesManager"]
+- !private ["s9EquatableP", "Thread"]
+- ["s9EquatableP", ""]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "addObserver"]
+- !private ["s9EquatableP", "connect"]
+- !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "didLogin"]
+- !private ["s9EquatableP", "failedToAuthenticate"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "isMainThread"]
+- !private ["s9EquatableP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["s9EquatableP", "kLoginManagerDidLoginSucceeded"]
+- !private ["s9EquatableP", "loginManager"]
+- !private ["s9EquatableP", "main"]
+- !private ["s9EquatableP", "setUsername"]
+- !private ["s9EquatableP", "sharedInstance"]
+- !private ["s9EquatableP", "sync"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "DispatchQueue"]
+- !private ["s8HashableP", "NSLog"]
+- !private ["s8HashableP", "NSNotification"]
+- !private ["s8HashableP", "Name"]
+- !private ["s8HashableP", "NotificationCenter"]
+- !private ["s8HashableP", "ServicesManager"]
+- !private ["s8HashableP", "Thread"]
+- ["s8HashableP", ""]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "addObserver"]
+- !private ["s8HashableP", "connect"]
+- !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "didLogin"]
+- !private ["s8HashableP", "failedToAuthenticate"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "isMainThread"]
+- !private ["s8HashableP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["s8HashableP", "kLoginManagerDidLoginSucceeded"]
+- !private ["s8HashableP", "loginManager"]
+- !private ["s8HashableP", "main"]
+- !private ["s8HashableP", "setUsername"]
+- !private ["s8HashableP", "sharedInstance"]
+- !private ["s8HashableP", "sync"]
+- !private ["So12LoginManagerC", "connect"]
+- !private ["So12LoginManagerC", "setUsername"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "Name"]
+- !private ["So9NSCopyingP", "Name"]
+- !private ["So14NSNotificationC", "Name"]
+- !private ["So8NSObjectC", "DispatchQueue"]
+- !private ["So8NSObjectC", "NSLog"]
+- ["So8NSObjectC", "NSNotification"]
+- !private ["So8NSObjectC", "Name"]
+- !private ["So8NSObjectC", "NotificationCenter"]
+- !private ["So8NSObjectC", "ServicesManager"]
+- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "Thread"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "addObserver"]
+- !private ["So8NSObjectC", "connect"]
+- !private ["So8NSObjectC", "default"]
+- ["So8NSObjectC", "didLogin"]
+- ["So8NSObjectC", "failedToAuthenticate"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isMainThread"]
+- !private ["So8NSObjectC", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["So8NSObjectC", "kLoginManagerDidLoginSucceeded"]
+- !private ["So8NSObjectC", "loginManager"]
+- ["So8NSObjectC", "loginWith"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "setUsername"]
+- !private ["So8NSObjectC", "sharedInstance"]
+- !private ["So8NSObjectC", "sync"]
+- !private ["So16NSObjectProtocolP", "DispatchQueue"]
+- !private ["So16NSObjectProtocolP", "NSLog"]
+- !private ["So16NSObjectProtocolP", "NSNotification"]
+- !private ["So16NSObjectProtocolP", "Name"]
+- !private ["So16NSObjectProtocolP", "NotificationCenter"]
+- !private ["So16NSObjectProtocolP", "ServicesManager"]
+- !private ["So16NSObjectProtocolP", "Thread"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "addObserver"]
+- !private ["So16NSObjectProtocolP", "connect"]
+- !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "didLogin"]
+- !private ["So16NSObjectProtocolP", "failedToAuthenticate"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "isMainThread"]
+- !private ["So16NSObjectProtocolP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["So16NSObjectProtocolP", "kLoginManagerDidLoginSucceeded"]
+- !private ["So16NSObjectProtocolP", "loginManager"]
+- !private ["So16NSObjectProtocolP", "main"]
+- !private ["So16NSObjectProtocolP", "setUsername"]
+- !private ["So16NSObjectProtocolP", "sharedInstance"]
+- !private ["So16NSObjectProtocolP", "sync"]
+- !private ["So14NSNotificationC4NameV", "init"]
+- !private ["So18NotificationCenterC", "addObserver"]
+- !private ["So18NotificationCenterC", "default"]
+- !private ["So9OS_objectC", "main"]
+- !private ["So9OS_objectC", "sync"]
+- !private ["13ExportRainbow0B7ManagerC", "DispatchQueue"]
+- !private ["13ExportRainbow0B7ManagerC", "NSLog"]
+- ["13ExportRainbow0B7ManagerC", "NSNotification"]
+- !private ["13ExportRainbow0B7ManagerC", "NotificationCenter"]
+- !private ["13ExportRainbow0B7ManagerC", "ServicesManager"]
+- ["13ExportRainbow0B7ManagerC", "String"]
+- !private ["13ExportRainbow0B7ManagerC", "Thread"]
+- ["13ExportRainbow0B7ManagerC", "deinit"]
+- ["13ExportRainbow0B7ManagerC", "didLogin"]
+- ["13ExportRainbow0B7ManagerC", "failedToAuthenticate"]
+- ["13ExportRainbow0B7ManagerC", "init"]
+- !private ["13ExportRainbow0B7ManagerC", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["13ExportRainbow0B7ManagerC", "kLoginManagerDidLoginSucceeded"]
+- ["13ExportRainbow0B7ManagerC", "loginWith"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "init"]
+- !private ["s8SequenceP", "init"]
+- !private ["So15ServicesManagerC", "loginManager"]
+- !private ["So15ServicesManagerC", "sharedInstance"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So6ThreadC", "isMainThread"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "Name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSLog"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSNotification"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NotificationCenter"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ServicesManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Thread"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addObserver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "connect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didLogin"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "failedToAuthenticate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isMainThread"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "kLoginManagerDidFailedToAuthenticate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "kLoginManagerDidLoginSucceeded"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "loginManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setUsername"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sharedInstance"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sync"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s20_SwiftNewtypeWrapperP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "So14DispatchObjectC"
+- !private "So13DispatchQueueC"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- !private "So12LoginManagerC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So14NSNotificationC"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSNotificationC4NameV"
+- !private "So18NotificationCenterC"
+- !private "So9OS_objectC"
+- "13ExportRainbow0B7ManagerC"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "s8SequenceP"
+- !private "So15ServicesManagerC"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So6ThreadC"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s20_SwiftNewtypeWrapperP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoCodecH264.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/WebRTC.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoCodec.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ChannelPayload.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CKItemsBrowser+protected.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/UIDevice+RTCDevice.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/RTCService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/FileSharingService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ConferencesManagerService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ConversationsManagerService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ContactsManagerService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CompaniesService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CallLogsService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ChannelsService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/RoomsService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/GroupsService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/TelephonyService.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NSDate+Distance.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Conference.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Presence.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CalendarPresence.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMediaSource.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoSource.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCAVFoundationVideoSource.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCAudioSource.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Message.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCIntervalRange.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/File.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoFrame.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NSData+MimeType.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCIceCandidate.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NSString+FileSize.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCTracing.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoViewShading.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCLogging.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Message+Browsing.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CallLog.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMediaStreamTrack.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoTrack.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCAudioTrack.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/UIDevice+VersionCheck.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Channel.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCDataChannel.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/UIImage+Thumbnail.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/RTCCall.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMediaStream.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CKBrowsableItem.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Room.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/MessagesAlwaysInSyncBrowserAddOn.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCAudioSession.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CKBrowsingOperation.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCConfiguration.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCDataChannelConfiguration.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCAudioSessionConfiguration.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Conversation.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Invitation.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CompanyInvitation.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCPeerConnection.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCSessionDescription.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMetricsSampleInfo.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Group.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/PhoneNumber.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/ExportRainbow-Bridging-Header.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCRtpSender.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/LogsRecorder.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Peer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoFrameBuffer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/LoginManager.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ServicesManager.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NotificationsManager.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCFileLogger.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCDispatcher.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ConferencePublisher.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoRenderer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoCapturer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCCameraVideoCapturer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ChannelUser.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/MyUser.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/MessagesBrowser.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/CKItemsBrowser.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCSSLAdapter.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCRtpReceiver.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Server.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCIceServer.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMetrics.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NSDate+Utilities.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/defines.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCFieldTrials.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Tools.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMacros.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCRtpCodecParameters.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCRtpEncodingParameters.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCRtpParameters.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/PostalAddress.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/EmailAddress.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/RainbowUserDefaults.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMediaConstraints.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NomadicStatus.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/NSDictionary+ChangedKeys.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Contact.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Participant.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ConferenceParticipant.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/ConfEndpoint.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCLegacyStatsReport.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCEAGLVideoView.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCMTLVideoView.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCCameraPreviewView.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Rainbow.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/Company.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Headers/OrderedDictionary.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCVideoCodecFactory.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Headers/RTCPeerConnectionFactory.h"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/WebRTC.framework/Modules/module.modulemap"
+- "/Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/Rainbow.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "b4240e88436d7436723d86c6579932aa"

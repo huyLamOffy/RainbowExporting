@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/huylam/Documents/ImportantThings/Learning/React-Native/learning_projs/ExportRainbow/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
