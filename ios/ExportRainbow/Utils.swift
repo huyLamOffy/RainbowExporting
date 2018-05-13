@@ -19,8 +19,9 @@ class HelperMethods: NSObject {
     dictionary["type"] = conversation.type
     dictionary["rainbowID"] = conversation.peer.rainbowID
     dictionary["lastMessage"] = conversation.lastMessage.body
+    dictionary["lastMessageTime"] = conversation.lastMessage.date.timeIntervalSince1970
     dictionary["lastUpdateDate"] = conversation.lastUpdateDate.timeIntervalSince1970
-    print("%@ conversation",conversation.type,conversation.peer.rainbowID,conversation.lastMessage,conversation.lastUpdateDate)
+    dictionary["unreadMessagesCount"] = conversation.unreadMessagesCount
     return dictionary
   }
   
@@ -33,7 +34,9 @@ class HelperMethods: NSObject {
     dictionary["fullName"] = contact.fullName
     dictionary["lastName"] = contact.lastName
     dictionary["firstName"] = contact.firstName
-    dictionary["photoData"] = contact.photoData
+    if contact.photoData != nil {
+      dictionary["photoData"] = contact.photoData.base64EncodedString(options: .init(rawValue: 0))
+    }
     dictionary["emailAddress"] = contact.emailAddresses.map{$0.address}
     dictionary["phoneNumber"] = contact.phoneNumbers.map{$0.number}
     dictionary["title"] = contact.title
@@ -43,5 +46,5 @@ class HelperMethods: NSObject {
       dictionary["presenceStatus"] = contact.presence.status
     }
     return dictionary
-  }
+  }  
 }

@@ -11,6 +11,7 @@ import Rainbow
 
 @objc(RainbowManager)
 class RainbowManager: RCTEventEmitter {
+  var currentConversation: ConversationController?
   @objc func loginWith(_ username: NSString, password: NSString) {
     print("%@ %@", username, password)
     ServicesManager.sharedInstance().loginManager.setUsername(username as String, andPassword: password as String)
@@ -25,7 +26,6 @@ class RainbowManager: RCTEventEmitter {
   @objc func logOut() {
     print("%@ log out ne")
     ServicesManager.sharedInstance().loginManager.disconnect()
-
     ServicesManager.sharedInstance().loginManager.resetAllCredentials()
   }
   
@@ -37,18 +37,22 @@ class RainbowManager: RCTEventEmitter {
     } else {
       callback([[]])
     }
-//      let conversation = conversations.first {
-//      _ = converationManager?.sendMessage("test ne", fileAttachment: nil, to: conversation, completionHandler: { (message, error) in
-//        if let error = error {
-//          print(error.localizedDescription)
-//
-//        } else {
-//          print("%@ sent mess", message ?? "nil message")
-//        }
-//      }, attachmentUploadProgressHandler: { (_, _, _) in
-//        print("%@ sent mess with file")
-//      })
-//    }
+    //      let conversation = conversations.first {
+    //      _ = converationManager?.sendMessage("test ne", fileAttachment: nil, to: conversation, completionHandler: { (message, error) in
+    //        if let error = error {
+    //          print(error.localizedDescription)
+    //
+    //        } else {
+    //          print("%@ sent mess", message ?? "nil message")
+    //        }
+    //      }, attachmentUploadProgressHandler: { (_, _, _) in
+    //        print("%@ sent mess with file")
+    //      })
+    //    }
+  }
+  
+  @objc func openConversation(_ id: NSString) {
+    currentConversation = ConversationController(id: id)
   }
   
   @objc func getContactList(_ callback: @escaping RCTResponseSenderBlock) {
@@ -63,8 +67,8 @@ class RainbowManager: RCTEventEmitter {
   @objc func touchContact(_ type: NSString, contactId: NSString) {
     print("%@ touchContact: ", contactId)
     if let contacts = ServicesManager.sharedInstance().contactsManagerService.contacts,
-    let contact = contacts.filter({$0.rainbowID == contactId as String}).first {
-
+      let contact = contacts.filter({$0.rainbowID == contactId as String}).first {
+      
       print("%@ findContact: ", contact)
     }
   }
