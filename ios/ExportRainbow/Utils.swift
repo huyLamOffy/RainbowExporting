@@ -46,5 +46,29 @@ class HelperMethods: NSObject {
       dictionary["presenceStatus"] = contact.presence.status
     }
     return dictionary
-  }  
+  }
+  
+  @objc static func JSONfrom(message: Message) -> [String: Any] {
+    var dictionary: [String: Any] = [:]
+    if message.peer != nil {
+      dictionary["rainbowID"] = message.peer.rainbowID
+    }
+    dictionary["messageID"] = message.messageID
+    dictionary["body"] = message.body
+    if message.timestamp != nil {
+      dictionary["timestamp"] = message.timestamp.timeIntervalSince1970
+    }
+    if message.date != nil {
+      dictionary["date"] = message.date.timeIntervalSince1970
+    }
+    dictionary["isOutgoing"] = message.isOutgoing
+    return dictionary
+  }
 }
+
+
+
+
+
+
+

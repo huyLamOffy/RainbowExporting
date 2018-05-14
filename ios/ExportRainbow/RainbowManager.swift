@@ -9,6 +9,13 @@ import Foundation
 import Rainbow
 // RainbowManager.swift
 
+fileprivate let didAddedCachedItems = "didAddedCachedItems"
+fileprivate let didRemoveCacheItems = "didRemoveCacheItems"
+fileprivate let didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes"
+fileprivate let didUpdateCacheItems = "didUpdateCacheItems"
+fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
+
+
 @objc(RainbowManager)
 class RainbowManager: RCTEventEmitter {
   var currentConversation: ConversationController?
@@ -51,8 +58,13 @@ class RainbowManager: RCTEventEmitter {
     //    }
   }
   
+  @objc func sendText(_ text: NSString) {
+    currentConversation?.send(text: text as String)
+  }
+  
   @objc func openConversation(_ id: NSString) {
     currentConversation = ConversationController(id: id)
+    currentConversation?.eventEmitter = self
   }
   
   @objc func getContactList(_ callback: @escaping RCTResponseSenderBlock) {
@@ -84,7 +96,12 @@ class RainbowManager: RCTEventEmitter {
       "DidLoginRainbow",
       "DidLogoutRainbow",
       "DidEndPopulatingRainbow",
-      "FailAuthenticationRainbow"
+      "FailAuthenticationRainbow",
+      didReorderCacheItemsAtIndexes,
+      didRemoveCacheItems,
+      didUpdateCacheItems,
+      didAddedCachedItems,
+      resyncBrowsingCache
     ]
   }
   
@@ -123,7 +140,7 @@ class RainbowManager: RCTEventEmitter {
     let ret =  [
       "name": "Did login"
     ]
-    self.sendEvent(withName: "DidLoginRainbow", body: ret )
+    sendEvent(withName: "DidLoginRainbow", body: ret)
   }
   
   @objc func failedToAuthenticate(notification : NSNotification) {

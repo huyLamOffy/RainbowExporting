@@ -33,6 +33,21 @@ var subscription = rainbowManagerEvt.addListener(
         });
       }
     );
+var subscription1 = rainbowManagerEvt.addListener(
+  'resyncBrowsingCache',
+  (progress) => {
+    console.log(progress);
+    console.log('resyncBrowsingCache');
+    RainbowManager.sendText('love ya')
+  }
+);
+var subscription2 = rainbowManagerEvt.addListener(
+  'didAddedCachedItems',
+  (newMessages) => {
+    console.log('didAddedCachedItems');
+    console.log(newMessages);
+  }
+);
 
 // var subscription = NativeAppEventEmitter.addListener(
 //     'EventReminder',

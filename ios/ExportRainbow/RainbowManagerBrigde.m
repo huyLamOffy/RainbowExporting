@@ -25,4 +25,5 @@ RCT_EXTERN_METHOD(touchContact: (NSString *)type contactId:(NSString *)contactId
 RCT_EXTERN_METHOD(getContactList:(RCTResponseSenderBlock *)callback)
 RCT_EXTERN_METHOD(getConversations:(RCTResponseSenderBlock *)callback)
 RCT_EXTERN_METHOD(openConversation: (NSString *)id)
+RCT_EXTERN_METHOD(sendText: (NSString *)text)
 @end

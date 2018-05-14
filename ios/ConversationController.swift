@@ -9,11 +9,22 @@
 import Foundation
 import Rainbow
 
+fileprivate let kPageSize = 20
+fileprivate let didAddedCachedItems = "didAddedCachedItems"
+fileprivate let didRemoveCacheItems = "didRemoveCacheItems"
+fileprivate let didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes"
+fileprivate let didUpdateCacheItems = "didUpdateCacheItems"
+fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
+
 @objc(ConversationController)
 class ConversationController: NSObject {
+  //MARK: - Properties
   weak var conversation: Conversation?
   weak var contact: Contact?
+  weak var messagesBrowser: MessagesBrowser!
+  weak var eventEmitter: RCTEventEmitter!
   var id: String!
+  
   init(id: NSString) {
     super.init()
     self.id = id as String
@@ -23,12 +34,8 @@ class ConversationController: NSObject {
         //handle error
       return
     }
-    
-    for contact in contactMan.contacts {
-      if contact.rainbowID == self.id {
-        self.contact = contact
-        break
-      }
+    if let contactIndex = contactMan.contacts.index(where: {$0.rainbowID == self.id}) {
+      self.contact = contactMan.contacts[contactIndex]
     }
     
     guard let contact = self.contact else {
@@ -37,31 +44,96 @@ class ConversationController: NSObject {
       return
     }
     
-    for conversation in conversationMan.conversations {
-      if conversation.peer.rainbowID == self.id {
-        self.conversation = conversation
-        break
-      }
+    if let conversationIndex = conversationMan.conversations.index(where: {$0.peer.rainbowID == self.id}) {
+      self.conversation = conversationMan.conversations[conversationIndex]
     }
     
+//    for conversation in conversationMan.conversations {
+//      if conversation.peer.rainbowID == self.id {
+//        self.conversation = conversation
+//        break
+//      }
+//    }
+//
     if conversation == nil {
       conversationMan.startConversation(with: contact) { [weak self] (conversation, error) in
         if let error = error {
           //handle error
           print("%@ error startConversation", error.localizedDescription)
-        } else {
+        } else if let conversation = conversation {
           self?.conversation = conversation
+          self?.setUpMessageBrowser(for: conversation)
         }
       }
+    } else {
+      setUpMessageBrowser(for: conversation!)
     }
     
     print("%@ create conversation",self.conversation!)
     print("%@ create contact", self.contact!)
-  }
+    //kConversationsManagerDidReceiveNewMessageForConversation
+    NotificationCenter.default.addObserver(self, selector: #selector(didReceiveNewMessage(notification:)), name: NSNotification.Name(kConversationsManagerDidReceiveNewMessageForConversation), object: nil)
+    
+    }
   
   deinit {
     print(self,"deinit")
   }
   
+  //MARK: - Helper methods
+  func send(text: String) {
+    guard let conversation = conversation else {
+      return
+    }
+    ServicesManager.sharedInstance().conversationsManagerService.sendMessage(text, fileAttachment: nil, to: conversation, completionHandler: { (message, error) in
+      print("%@ message", message ?? "nil")
+      print("%@ error", error ?? "nil")
+    }, attachmentUploadProgressHandler: nil)
+  }
   
+  func setUpMessageBrowser(for conversation: Conversation) {
+    messagesBrowser = ServicesManager.sharedInstance().conversationsManagerService.messagesBrowser(for: conversation, withPageSize: kPageSize, preloadMessages: true)
+    messagesBrowser.delegate = self
+    messagesBrowser.resyncBrowsingCache { [weak self] (addedCacheItems, removedCacheItems, updatedCacheItems, error) in
+      if let error = error {
+        print("%@ get error resync mess", error.localizedDescription)
+      }
+      print("%@ resync browsing cache")
+      self?.eventEmitter.sendEvent(withName: resyncBrowsingCache, body: "resyncBrowsingCache")
+    }
+  }
+  
+  func didReceiveNewMessage(notification: Notification) {
+    if let receivedConversation = notification.object as? Conversation {
+      if receivedConversation == self.conversation {
+        print("%@ receivedConversation - did new message for the conversation")
+      }
+    }
+  }
+}
+//MARK: - CKItemsBrowserDelegate
+extension ConversationController: CKItemsBrowserDelegate {
+  func itemsBrowser(_ browser: CKItemsBrowser!, didAddCacheItems newItems: [Any]!, at indexes: IndexSet!) {
+    print("%@ didAddCacheItems")
+    var body: [[String: Any]] = []
+    guard let newMessages = newItems as? [Message] else {
+      return
+    }
+    for message in newMessages.enumerated() {
+      body.append(HelperMethods.JSONfrom(message: message.element))
+    }
+    eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
+  }
+  
+  func itemsBrowser(_ browser: CKItemsBrowser!, didRemoveCacheItems removedItems: [Any]!, at indexes: IndexSet!) {
+    print("%@ didRemoveCacheItems")
+  }
+  
+  func itemsBrowser(_ browser: CKItemsBrowser!, didUpdateCacheItems changedItems: [Any]!, at indexes: IndexSet!) {
+    print("%@ didUpdateCacheItems")
+  }
+  
+  func itemsBrowser(_ browser: CKItemsBrowser!, didReorderCacheItemsAtIndexes oldIndexes: [Any]!, toIndexes newIndexes: [Any]!) {
+    print("%@ didReorderCacheItemsAtIndexes")
+  }
 }
