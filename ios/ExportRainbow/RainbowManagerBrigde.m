@@ -27,4 +27,5 @@ RCT_EXTERN_METHOD(getConversations:(RCTResponseSenderBlock *)callback)
 RCT_EXTERN_METHOD(openConversation: (NSString *)id)
 RCT_EXTERN_METHOD(sendText: (NSString *)text)
 RCT_EXTERN_METHOD(sendFileBase64: (NSString *)base64)
+RCT_EXTERN_METHOD(closeConversation)
 @end

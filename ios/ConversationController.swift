@@ -47,14 +47,6 @@ class ConversationController: NSObject {
     if let conversationIndex = conversationMan.conversations.index(where: {$0.peer.rainbowID == self.id}) {
       self.conversation = conversationMan.conversations[conversationIndex]
     }
-    
-    //    for conversation in conversationMan.conversations {
-    //      if conversation.peer.rainbowID == self.id {
-    //        self.conversation = conversation
-    //        break
-    //      }
-    //    }
-    //
     if conversation == nil {
       conversationMan.startConversation(with: contact) { [weak self] (conversation, error) in
         if let error = error {
@@ -73,7 +65,6 @@ class ConversationController: NSObject {
     print("%@ create contact", self.contact!)
     //kConversationsManagerDidReceiveNewMessageForConversation
     NotificationCenter.default.addObserver(self, selector: #selector(didReceiveNewMessage(notification:)), name: NSNotification.Name(kConversationsManagerDidReceiveNewMessageForConversation), object: nil)
-    
   }
   
   deinit {
@@ -114,6 +105,7 @@ class ConversationController: NSObject {
   func setUpMessageBrowser(for conversation: Conversation) {
     messagesBrowser = ServicesManager.sharedInstance().conversationsManagerService.messagesBrowser(for: conversation, withPageSize: kPageSize, preloadMessages: true)
     messagesBrowser.delegate = self
+    print("%@ alo", messagesBrowser ?? "null")
     messagesBrowser.resyncBrowsingCache { [weak self] (addedCacheItems, removedCacheItems, updatedCacheItems, error) in
       if let error = error {
         print("%@ get error resync mess", error.localizedDescription)

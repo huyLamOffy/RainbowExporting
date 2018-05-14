@@ -56,6 +56,10 @@ class RainbowManager: RCTEventEmitter {
     currentConversation?.send(text: text as String)
   }
   
+  @objc func closeConversation() {
+    currentConversation = nil
+  }
+  
   @objc func openConversation(_ id: NSString) {
     currentConversation = ConversationController(id: id)
     currentConversation?.eventEmitter = self

@@ -37,7 +37,6 @@ var subscription1 = rainbowManagerEvt.addListener(
   (progress) => {
     console.log(progress);
     console.log('resyncBrowsingCache');
-    RainbowManager.sendFileBase64('base64');
   }
 );
 var subscription2 = rainbowManagerEvt.addListener(
@@ -45,6 +44,7 @@ var subscription2 = rainbowManagerEvt.addListener(
   (newMessages) => {
     console.log('didAddedCachedItems');
     console.log(newMessages);
+    RainbowManager.closeConversation()
   }
 );
 
