@@ -27,8 +27,7 @@ var subscription = rainbowManagerEvt.addListener(
           RainbowManager.touchContact('test', contacts[0].rainbowID)
         });
         RainbowManager.getConversations((conversations) => {
-          console.log(conversations[0].rainbowID);
-          RainbowManager.openConversation(conversations[0].rainbowID)
+          RainbowManager.openConversation(conversations[1].rainbowID)
           console.log(conversations);
         });
       }
@@ -38,7 +37,7 @@ var subscription1 = rainbowManagerEvt.addListener(
   (progress) => {
     console.log(progress);
     console.log('resyncBrowsingCache');
-    RainbowManager.sendText('love ya')
+    RainbowManager.sendFileBase64('base64');
   }
 );
 var subscription2 = rainbowManagerEvt.addListener(

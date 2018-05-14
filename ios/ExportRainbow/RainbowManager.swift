@@ -19,6 +19,8 @@ fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
 @objc(RainbowManager)
 class RainbowManager: RCTEventEmitter {
   var currentConversation: ConversationController?
+  
+  //MARK: RCT_EXTERN_METHODS
   @objc func loginWith(_ username: NSString, password: NSString) {
     print("%@ %@", username, password)
     ServicesManager.sharedInstance().loginManager.setUsername(username as String, andPassword: password as String)
@@ -44,18 +46,10 @@ class RainbowManager: RCTEventEmitter {
     } else {
       callback([[]])
     }
-    //      let conversation = conversations.first {
-    //      _ = converationManager?.sendMessage("test ne", fileAttachment: nil, to: conversation, completionHandler: { (message, error) in
-    //        if let error = error {
-    //          print(error.localizedDescription)
-    //
-    //        } else {
-    //          print("%@ sent mess", message ?? "nil message")
-    //        }
-    //      }, attachmentUploadProgressHandler: { (_, _, _) in
-    //        print("%@ sent mess with file")
-    //      })
-    //    }
+  }
+  
+  @objc func sendFileBase64(_ base64: NSString) {
+    currentConversation?.sendFile(base64: base64)
   }
   
   @objc func sendText(_ text: NSString) {

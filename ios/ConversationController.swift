@@ -32,7 +32,7 @@ class ConversationController: NSObject {
       let contactMan = serviceMan.contactsManagerService,
       let conversationMan = serviceMan.conversationsManagerService else {
         //handle error
-      return
+        return
     }
     if let contactIndex = contactMan.contacts.index(where: {$0.rainbowID == self.id}) {
       self.contact = contactMan.contacts[contactIndex]
@@ -48,13 +48,13 @@ class ConversationController: NSObject {
       self.conversation = conversationMan.conversations[conversationIndex]
     }
     
-//    for conversation in conversationMan.conversations {
-//      if conversation.peer.rainbowID == self.id {
-//        self.conversation = conversation
-//        break
-//      }
-//    }
-//
+    //    for conversation in conversationMan.conversations {
+    //      if conversation.peer.rainbowID == self.id {
+    //        self.conversation = conversation
+    //        break
+    //      }
+    //    }
+    //
     if conversation == nil {
       conversationMan.startConversation(with: contact) { [weak self] (conversation, error) in
         if let error = error {
@@ -74,13 +74,33 @@ class ConversationController: NSObject {
     //kConversationsManagerDidReceiveNewMessageForConversation
     NotificationCenter.default.addObserver(self, selector: #selector(didReceiveNewMessage(notification:)), name: NSNotification.Name(kConversationsManagerDidReceiveNewMessageForConversation), object: nil)
     
-    }
+  }
   
   deinit {
     print(self,"deinit")
   }
   
   //MARK: - Helper methods
+  func sendFile(base64: NSString) {
+    let myUser = ServicesManager.sharedInstance().myUser
+    guard let data = HelperMethods.dataFrom(base64: base64) else {
+      print("%@ nil data convert from base 64")
+      return
+    }
+    print("%@ myUser",myUser ?? "nil")
+    let userName = myUser?.contact.fullName
+    if let fileName = ((userName ?? "userName") + NSUUID().uuidString.lowercased()).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+      let file = ServicesManager.sharedInstance().fileSharingService.createTemporaryFile(withFileName: fileName, andData: data, andURL: URL(string: fileName))
+      ServicesManager.sharedInstance().conversationsManagerService.sendMessage("test image", fileAttachment: file, to: conversation, completionHandler: { (message, error) in
+        if let error = error {
+          print("%@ error send mess", error)
+        } else {
+          print("%@ message send", message?.body ?? "nil body", message?.attachment.fileName ?? "nil body")
+        }
+      }, attachmentUploadProgressHandler: nil)
+    }
+  }
+  
   func send(text: String) {
     guard let conversation = conversation else {
       return
@@ -119,9 +139,7 @@ extension ConversationController: CKItemsBrowserDelegate {
     guard let newMessages = newItems as? [Message] else {
       return
     }
-    for message in newMessages.enumerated() {
-      body.append(HelperMethods.JSONfrom(message: message.element))
-    }
+    body = newMessages.reversed().compactMap{ HelperMethods.JSONfrom(message: $0) }
     eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
   }
   

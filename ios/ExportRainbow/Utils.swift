@@ -64,6 +64,11 @@ class HelperMethods: NSObject {
     dictionary["isOutgoing"] = message.isOutgoing
     return dictionary
   }
+  
+  @objc static func dataFrom(base64: NSString) -> Data? {
+    return Data.init(base64Encoded: base64 as String, options: .ignoreUnknownCharacters)
+    
+  }
 }
 
 
