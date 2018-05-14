@@ -61,6 +61,9 @@ class HelperMethods: NSObject {
     if message.date != nil {
       dictionary["date"] = message.date.timeIntervalSince1970
     }
+    if message.attachment != nil {
+      dictionary["hasAttachment"] = true
+    }
     dictionary["isOutgoing"] = message.isOutgoing
     return dictionary
   }
@@ -68,6 +71,10 @@ class HelperMethods: NSObject {
   @objc static func dataFrom(base64: NSString) -> Data? {
     return Data.init(base64Encoded: base64 as String, options: .ignoreUnknownCharacters)
     
+  }
+  
+  @objc static func getImageFromRainbow() {
+   
   }
 }
 

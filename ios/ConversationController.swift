@@ -19,10 +19,12 @@ fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
 @objc(ConversationController)
 class ConversationController: NSObject {
   //MARK: - Properties
+  var test = 0
   weak var conversation: Conversation?
   weak var contact: Contact?
   var messagesBrowser: MessagesBrowser!
   weak var eventEmitter: RCTEventEmitter!
+  var listMessages: [Message]! = []
   var id: String!
   
   init(id: NSString) {
@@ -134,8 +136,9 @@ extension ConversationController: CKItemsBrowserDelegate {
     guard let newMessages = newItems as? [Message] else {
       return
     }
-    body = newMessages.reversed().compactMap{ HelperMethods.JSONfrom(message: $0) }
-    print("%@ list message",body)
+    listMessages.append(contentsOf: newMessages.reversed())
+    
+    body = listMessages.compactMap{ HelperMethods.JSONfrom(message: $0) }
     eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
   }
   

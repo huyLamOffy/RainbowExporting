@@ -56,6 +56,28 @@ class RainbowManager: RCTEventEmitter {
     currentConversation?.send(text: text as String)
   }
   
+  func downloadAttachmentOf(_ messageID: NSString, callback: @escaping RCTResponseSenderBlock) {
+    guard let messages = currentConversation?.listMessages,
+      let index = messages.index(where: {$0.messageID == messageID as String}) else {
+        callback(["Error: couldn't find message", ""])
+      return
+    }
+    let message = messages[index]
+    guard let file = message.attachment else {
+      callback(["Error: couldn't find attachment", ""])
+      return
+    }
+    ServicesManager.sharedInstance().fileSharingService.downloadData(for: file) { (file, error) in
+      print("%@", file?.data.base64EncodedString as Any)
+      print("%@", error as Any)
+      if let error = error {
+        callback([error, ""])
+      } else if let data = file?.data {
+        callback([NSNull.init(), data.base64EncodedString(options: .init(rawValue: 0))])
+      }
+    }
+  }
+  
   @objc func closeConversation() {
     currentConversation = nil
   }
