@@ -155,6 +155,4 @@ class RainbowManager: RCTEventEmitter {
     self.sendEvent(withName: "FailAuthenticationRainbow", body: ret )
     print("%@ Did fail")
   }
-  
-  
 }

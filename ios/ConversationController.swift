@@ -21,7 +21,7 @@ class ConversationController: NSObject {
   //MARK: - Properties
   weak var conversation: Conversation?
   weak var contact: Contact?
-  weak var messagesBrowser: MessagesBrowser!
+  var messagesBrowser: MessagesBrowser!
   weak var eventEmitter: RCTEventEmitter!
   var id: String!
   
@@ -68,6 +68,9 @@ class ConversationController: NSObject {
   }
   
   deinit {
+    messagesBrowser.reset()
+    messagesBrowser.delegate = nil
+    messagesBrowser = nil
     print(self,"deinit")
   }
   
@@ -132,6 +135,7 @@ extension ConversationController: CKItemsBrowserDelegate {
       return
     }
     body = newMessages.reversed().compactMap{ HelperMethods.JSONfrom(message: $0) }
+    print("%@ list message",body)
     eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
   }
   

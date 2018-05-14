@@ -10,6 +10,7 @@ import {
   NativeEventEmitter,
   StyleSheet,
   NativeModules,
+  TouchableHighlight,
   Text,
   View
 } from 'react-native';
@@ -44,7 +45,6 @@ var subscription2 = rainbowManagerEvt.addListener(
   (newMessages) => {
     console.log('didAddedCachedItems');
     console.log(newMessages);
-    RainbowManager.closeConversation()
   }
 );
 
@@ -82,6 +82,15 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <TouchableHighlight
+          underlayColor='transparent'
+          style={{backgroundColor: 'red'}}
+          onPress = {() => {
+            RainbowManager.closeConversation()
+          }}
+        >
+          <Text>{`I'M A NEW USER`}</Text>
+          </TouchableHighlight>
       </View>
     );
   }
