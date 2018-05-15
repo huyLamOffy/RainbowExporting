@@ -19,12 +19,11 @@ fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
 @objc(ConversationController)
 class ConversationController: NSObject {
   //MARK: - Properties
-  var test = 0
   weak var conversation: Conversation?
   weak var contact: Contact?
   var messagesBrowser: MessagesBrowser!
   weak var eventEmitter: RCTEventEmitter!
-  var listMessages: [Message]! = []
+  var messagesDictionary: [String: Message] = [:]
   var id: String!
   
   init(id: NSString) {
@@ -87,7 +86,7 @@ class ConversationController: NSObject {
     let userName = myUser?.contact.fullName
     if let fileName = ((userName ?? "userName") + NSUUID().uuidString.lowercased()).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
       let file = ServicesManager.sharedInstance().fileSharingService.createTemporaryFile(withFileName: fileName, andData: data, andURL: URL(string: fileName))
-      ServicesManager.sharedInstance().conversationsManagerService.sendMessage("test image", fileAttachment: file, to: conversation, completionHandler: { (message, error) in
+      ServicesManager.sharedInstance().conversationsManagerService.sendMessage("", fileAttachment: file, to: conversation, completionHandler: { (message, error) in
         if let error = error {
           print("%@ error send mess", error)
         } else {
@@ -136,9 +135,11 @@ extension ConversationController: CKItemsBrowserDelegate {
     guard let newMessages = newItems as? [Message] else {
       return
     }
-    listMessages.append(contentsOf: newMessages.reversed())
+    DispatchQueue.global().async { [weak self] in
+      newMessages.forEach{ self?.messagesDictionary[$0.messageID] = $0 }
+    }
     
-    body = listMessages.compactMap{ HelperMethods.JSONfrom(message: $0) }
+    body = newMessages.reversed().compactMap{ HelperMethods.JSONfrom(message: $0) }
     eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
   }
   

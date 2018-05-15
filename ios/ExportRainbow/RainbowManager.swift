@@ -57,12 +57,10 @@ class RainbowManager: RCTEventEmitter {
   }
   
   func downloadAttachmentOf(_ messageID: NSString, callback: @escaping RCTResponseSenderBlock) {
-    guard let messages = currentConversation?.listMessages,
-      let index = messages.index(where: {$0.messageID == messageID as String}) else {
+    guard let message = currentConversation?.messagesDictionary[messageID as String] else {
         callback(["Error: couldn't find message", ""])
       return
     }
-    let message = messages[index]
     guard let file = message.attachment else {
       callback(["Error: couldn't find attachment", ""])
       return
