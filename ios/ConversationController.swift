@@ -10,11 +10,6 @@ import Foundation
 import Rainbow
 
 fileprivate let kPageSize = 20
-fileprivate let didAddedCachedItems = "didAddedCachedItems"
-fileprivate let didRemoveCacheItems = "didRemoveCacheItems"
-fileprivate let didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes"
-fileprivate let didUpdateCacheItems = "didUpdateCacheItems"
-fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
 
 @objc(ConversationController)
 class ConversationController: NSObject {
@@ -115,7 +110,7 @@ class ConversationController: NSObject {
         print("%@ get error resync mess", error.localizedDescription)
       }
       print("%@ resync browsing cache")
-      self?.eventEmitter.sendEvent(withName: resyncBrowsingCache, body: "resyncBrowsingCache")
+      self?.eventEmitter.sendEvent(withName: EventName.resyncBrowsingCache, body: "resyncBrowsingCache")
     }
   }
   
@@ -140,7 +135,7 @@ extension ConversationController: CKItemsBrowserDelegate {
     }
     
     body = newMessages.reversed().compactMap{ HelperMethods.JSONfrom(message: $0) }
-    eventEmitter.sendEvent(withName: didAddedCachedItems, body: body)
+    eventEmitter.sendEvent(withName: EventName.didAddedCachedItems, body: body)
   }
   
   func itemsBrowser(_ browser: CKItemsBrowser!, didRemoveCacheItems removedItems: [Any]!, at indexes: IndexSet!) {

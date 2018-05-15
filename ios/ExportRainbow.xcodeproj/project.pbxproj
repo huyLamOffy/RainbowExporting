@@ -49,6 +49,7 @@
 		7829DF2320A3F85000CD9989 /* RainbowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829DF2220A3F85000CD9989 /* RainbowManager.swift */; };
 		7829DFB120A5916300CD9989 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829DFB020A5916300CD9989 /* Utils.swift */; };
 		786F3CA520A83DD500AE8425 /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F3CA420A83DD500AE8425 /* ConversationController.swift */; };
+		78CC24EC20AA7BEF004828FE /* EventName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC24EB20AA7BEF004828FE /* EventName.swift */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
@@ -379,6 +380,7 @@
 		7829DFB020A5916300CD9989 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ExportRainbow/Utils.swift; sourceTree = "<group>"; };
 		786F3CA420A83DD500AE8425 /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		78CC24EB20AA7BEF004828FE /* EventName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventName.swift; path = ExportRainbow/EventName.swift; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -539,6 +541,7 @@
 				7829DFB020A5916300CD9989 /* Utils.swift */,
 				7829DF2120A3F84F00CD9989 /* ExportRainbow-Bridging-Header.h */,
 				786F3CA420A83DD500AE8425 /* ConversationController.swift */,
+				78CC24EB20AA7BEF004828FE /* EventName.swift */,
 			);
 			name = ExportRainbow;
 			sourceTree = "<group>";
@@ -1186,6 +1189,7 @@
 				7829DF1F20A3F77400CD9989 /* RainbowManagerBrigde.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				786F3CA520A83DD500AE8425 /* ConversationController.swift in Sources */,
+				78CC24EC20AA7BEF004828FE /* EventName.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

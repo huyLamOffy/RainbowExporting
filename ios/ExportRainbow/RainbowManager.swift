@@ -9,12 +9,6 @@ import Foundation
 import Rainbow
 // RainbowManager.swift
 
-fileprivate let didAddedCachedItems = "didAddedCachedItems"
-fileprivate let didRemoveCacheItems = "didRemoveCacheItems"
-fileprivate let didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes"
-fileprivate let didUpdateCacheItems = "didUpdateCacheItems"
-fileprivate let resyncBrowsingCache = "resyncBrowsingCache"
-
 
 @objc(RainbowManager)
 class RainbowManager: RCTEventEmitter {
@@ -110,17 +104,7 @@ class RainbowManager: RCTEventEmitter {
   
   //MARK: - Conform RCTEventEmitter
   override func supportedEvents() -> [String]! {
-    return [
-      "DidLoginRainbow",
-      "DidLogoutRainbow",
-      "DidEndPopulatingRainbow",
-      "FailAuthenticationRainbow",
-      didReorderCacheItemsAtIndexes,
-      didRemoveCacheItems,
-      didUpdateCacheItems,
-      didAddedCachedItems,
-      resyncBrowsingCache
-    ]
+    return EventName.supportEvents
   }
   
   //MARK: - notification methods
@@ -134,7 +118,7 @@ class RainbowManager: RCTEventEmitter {
     let ret =  [
       "name": "DidLogoutRainbow"
     ]
-    self.sendEvent(withName: "DidLogoutRainbow", body: ret)
+    sendEvent(withName: EventName.didLogoutRainbow, body: ret)
     print("%@ Did logout");
   }
   
@@ -149,7 +133,7 @@ class RainbowManager: RCTEventEmitter {
     let ret =  [
       "name": "DidEndPopulatingRainbow"
     ]
-    self.sendEvent(withName: "DidEndPopulatingRainbow", body: ret)
+    self.sendEvent(withName: EventName.didEndPopulatingRainbow, body: ret)
     print("Did end populating my network");
   }
   
@@ -158,7 +142,7 @@ class RainbowManager: RCTEventEmitter {
     let ret =  [
       "name": "Did login"
     ]
-    sendEvent(withName: "DidLoginRainbow", body: ret)
+    sendEvent(withName: EventName.didLoginRainbow, body: ret)
   }
   
   @objc func failedToAuthenticate(notification : NSNotification) {
@@ -172,7 +156,7 @@ class RainbowManager: RCTEventEmitter {
     let ret =  [
       "name": "failedToAuthenticate"
     ]
-    self.sendEvent(withName: "FailAuthenticationRainbow", body: ret )
+    self.sendEvent(withName: EventName.failAuthenticationRainbow, body: ret )
     print("%@ Did fail")
   }
 }
