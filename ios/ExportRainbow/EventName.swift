@@ -19,6 +19,14 @@ class EventName: NSObject {
   static let didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes"
   static let didUpdateCacheItems = "didUpdateCacheItems"
   static let resyncBrowsingCache = "resyncBrowsingCache"
+  static let didAddCall = "didAddCall"
+  static let didUpdateCall = "didUpdateCall"
+  static let didChangeCallStatus = "didChangeCallStatus"
+  static let didRemoveCall = "didRemoveCall"
+  static let didAllowMicrophone = "DidAllowMicrophone"
+  static let didRemoveMicrophone = "DidRemoveMicrophone"
+  static let requestAccessMicophone = "requestAccessMicophone"
+  
   
   static let supportEvents = [
     didLoginRainbow,
@@ -29,6 +37,13 @@ class EventName: NSObject {
     didRemoveCacheItems,
     didReorderCacheItemsAtIndexes,
     didUpdateCacheItems,
-    resyncBrowsingCache
+    resyncBrowsingCache,
+    didAddCall,
+    didUpdateCall,
+    didChangeCallStatus,
+    didRemoveCall,
+    didAllowMicrophone,
+    didRemoveMicrophone,
+    requestAccessMicophone
   ]
 }

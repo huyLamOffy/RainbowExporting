@@ -46,14 +46,6 @@ var subscription2 = rainbowManagerEvt.addListener(
   (newMessages) => {
     console.log('didAddedCachedItems');
     console.log(newMessages);
-    if (newMessages[3].hasAttachment) {
-      console.log('hasAttachment');
-      console.log(newMessages[3].messageID);
-      RainbowManager.downloadAttachmentOf(newMessages[3].messageID, (error, imageBase64) => {
-        console.log('downloadAttachment callback');
-        console.log(error);
-        console.log(imageBase64);
-      });
     }
   }
 );

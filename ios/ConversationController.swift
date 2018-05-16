@@ -64,6 +64,7 @@ class ConversationController: NSObject {
   }
   
   deinit {
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: kConversationsManagerDidReceiveNewMessageForConversation), object: nil)
     messagesBrowser.reset()
     messagesBrowser.delegate = nil
     messagesBrowser = nil
