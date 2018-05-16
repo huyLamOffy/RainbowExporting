@@ -95,12 +95,11 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '27.0.3'
-
     defaultConfig {
         applicationId "com.exportrainbow"
+        multiDexEnabled true
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         ndk {
@@ -134,12 +133,19 @@ android {
             }
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.ale:rainbowsdk:1.40.0'
+    implementation 'com.android.support:multidex:1.0.3'
     compile "com.facebook.react:react-native:+"  // From node_modules
 }
 
