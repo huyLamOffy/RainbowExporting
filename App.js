@@ -15,40 +15,42 @@ import {
   View
 } from 'react-native';
 
-const RainbowManager = NativeModules.RainbowManager;
-const rainbowManagerEvt = new NativeEventEmitter(RainbowManager);
-var subscription = rainbowManagerEvt.addListener(
-      'DidLoginRainbow',
-      (progress) => {
-        console.log("DidLoginRainbow")
-        console.log(progress)
-        RainbowManager.getContactList((contacts) => {
-          console.log(contacts);
-          console.log('test');
-          RainbowManager.touchContact('test', contacts[0].rainbowID)
-        });
-        RainbowManager.getConversations((conversations) => {
-          RainbowManager.openConversation(conversations[1].rainbowID)
-          console.log(conversations);
 
-        });
-      }
-    );
-var subscription1 = rainbowManagerEvt.addListener(
-  'resyncBrowsingCache',
-  (progress) => {
-    console.log(progress);
-    console.log('resyncBrowsingCache');
-  }
-);
-var subscription2 = rainbowManagerEvt.addListener(
-  'didAddedCachedItems',
-  (newMessages) => {
-    console.log('didAddedCachedItems');
-    console.log(newMessages);
-    }
-  }
-);
+//
+// const RainbowManager = NativeModules.RainbowManager;
+// const rainbowManagerEvt = new NativeEventEmitter(RainbowManager);
+// var subscription = rainbowManagerEvt.addListener(
+//       'DidLoginRainbow',
+//       (progress) => {
+//         console.log("DidLoginRainbow")
+//         console.log(progress)
+//         RainbowManager.getContactList((contacts) => {
+//           console.log(contacts);
+//           console.log('test');
+//           RainbowManager.touchContact('test', contacts[0].rainbowID)
+//         });
+//         RainbowManager.getConversations((conversations) => {
+//           RainbowManager.openConversation(conversations[1].rainbowID)
+//           console.log(conversations);
+//
+//         });
+//       }
+//     );
+// var subscription1 = rainbowManagerEvt.addListener(
+//   'resyncBrowsingCache',
+//   (progress) => {
+//     console.log(progress);
+//     console.log('resyncBrowsingCache');
+//   }
+// );
+// var subscription2 = rainbowManagerEvt.addListener(
+//   'didAddedCachedItems',
+//   (newMessages) => {
+//     console.log('didAddedCachedItems');
+//     console.log(newMessages);
+//     }
+//   }
+// );
 
 // var subscription = NativeAppEventEmitter.addListener(
 //     'EventReminder',
