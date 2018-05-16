@@ -11,13 +11,19 @@ import {
   StyleSheet,
   NativeModules,
   TouchableHighlight,
+  DeviceEventEmitter,
   Text,
   View
 } from 'react-native';
 
 
 //
-// const RainbowManager = NativeModules.RainbowManager;
+const RainbowManager = NativeModules.RainbowManager;
+RainbowManager.addEvent('Huy', 'Sai gon', 16)
+// RainbowManager.getContactList((contacts) => {
+//   console.log('contacts');
+//   console.log(contacts);
+// });
 // const rainbowManagerEvt = new NativeEventEmitter(RainbowManager);
 // var subscription = rainbowManagerEvt.addListener(
 //       'DidLoginRainbow',
@@ -72,9 +78,12 @@ type Props = {};
 
 export default class App extends Component<Props> {
   render() {
-    RainbowManager.loginWith('huylh@dgroup.co', 'SUGARdatingapp!23');
-    RainbowManager.addEvent('One', 'Two', 3);
     console.log(RainbowManager);
+    DeviceEventEmitter.addListener('DidLoginRainbow', function(e: Event) {
+    // handle event.
+    console.log('wtf event');
+    console.log(e);
+    });
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -90,7 +99,6 @@ export default class App extends Component<Props> {
           underlayColor='transparent'
           style={{backgroundColor: 'red'}}
           onPress = {() => {
-            RainbowManager.closeConversation()
           }}
         >
           <Text>{`I'M A NEW USER`}</Text>
