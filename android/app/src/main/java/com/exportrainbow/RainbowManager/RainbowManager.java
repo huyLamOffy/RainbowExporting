@@ -3,6 +3,10 @@ package com.exportrainbow.RainbowManager;
 import android.content.Context;
 import android.util.Log;
 
+import com.ale.listener.SigninResponseListener;
+import com.ale.listener.SignoutResponseListener;
+import com.ale.listener.StartResponseListener;
+import com.ale.rainbowsdk.RainbowSdk;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -19,35 +23,89 @@ import javax.annotation.Nullable;
 
 public class RainbowManager extends ReactContextBaseJavaModule {
     String TAG = "HuyLHLog-RainbowManager";
+    MainController mainController;
 
     Context mContext;
 
     public RainbowManager(ReactApplicationContext reactContext) {
         super(reactContext);
         mContext = reactContext;
+
     }
 
     @ReactMethod
     public void addEvent(String name, String location, int date) {
         Log.d(TAG, "addEvent: name - location - date" + name + location + date);
         WritableMap params = Arguments.createMap();
-        params.putString("name", "didLogin");
-        sendEvent((ReactContext) mContext, "DidLoginRainbow", params);
+        params.putString("event", EventName.didLoginRainbow);
+        sendEvent((ReactContext) mContext, EventName.didLoginRainbow, params);
     }
 
     @ReactMethod
     public void getContactList(Callback callback) {
-        Log.d(TAG, "getContactList: testCallback");
-        callback.invoke("tha thu", "tha thu 2");
+        Log.d(TAG, "getContactList: ");
+        Log.d(TAG, "getContactList: " + mainController.getContactList().getCount());
+        callback.invoke(HelperMethods.JSONFromContacts(mainController.getContactList()));
+    }
+
+    @ReactMethod
+    public void loginWith(String userName, String password) {
+        Log.d(TAG, "loginWith: usrName - password: " + userName + " - " + password);
+        RainbowSdk.instance().connection().start(new StartResponseListener() {
+            @Override
+            public void onStartSucceeded() {
+                Log.d(TAG, "onStartSucceeded: ");
+                RainbowSdk.instance().connection().signin(userName, password, new SigninResponseListener() {
+                    @Override
+                    public void onSigninSucceeded() {
+                        Log.d(TAG, "onSigninSucceeded:");
+                        sendEvent((ReactContext) mContext, EventName.didLoginRainbow, null);
+                        generateMainController();
+                    }
+
+                    @Override
+                    public void onRequestFailed(RainbowSdk.ErrorCode errorCode, String s) {
+                        Log.d(TAG, "onRequestFailed: "+ s);
+                        sendEvent((ReactContext) mContext, EventName.failAuthenticationRainbow, null);
+                    }
+                });
+            }
+
+            @Override
+            public void onRequestFailed(RainbowSdk.ErrorCode errorCode, String s) {
+                Log.d(TAG, "onRequestFailed: " + s);
+                sendEvent((ReactContext) mContext, EventName.failToStartRainbowService, null);
+            }
+        });
+    }
+
+    @ReactMethod
+    public void logOut() {
+        Log.d(TAG, "logOut:");
+        RainbowSdk.instance().connection().signout(new SignoutResponseListener() {
+            @Override
+            public void onSignoutSucceeded() {
+                sendEvent((ReactContext) mContext, EventName.didLogoutRainbow, null);
+                Log.d(TAG, "onSignoutSucceeded:");
+            }
+
+            @Override
+            public void onRequestFailed(RainbowSdk.ErrorCode errorCode, String s) {
+                com.ale.util.log.Log.getLogger().info(TAG, "Failed to signout");
+            }
+        });
     }
 
     @ReactMethod
     public void getConversations(Callback callback) {
-
+        Log.d(TAG, "getConversations: ");
+        Log.d(TAG, "getConversations: " + mainController.getConversations().getCount());
+        callback.invoke(HelperMethods.JSONFromConversations(mainController.getConversations()));
     }
 
-    //RCT_EXTERN_METHOD(getContactList:(RCTResponseSenderBlock *)callback)
-//    public void addEvent:(NSString *)name location:(NSString *)location date:(nonnull NSNumber *)date
+    private void generateMainController() {
+        mainController = new MainController();
+    }
 
     private void sendEvent(ReactContext reactContext,
                            String eventName,
@@ -82,6 +140,7 @@ public class RainbowManager extends ReactContextBaseJavaModule {
         constants.put(EventName.failAuthenticationRainbow, EventName.failAuthenticationRainbow);
         constants.put(EventName.requestAccessMicophone, EventName.requestAccessMicophone);
         constants.put(EventName.resyncBrowsingCache, EventName.resyncBrowsingCache);
+        constants.put(EventName.failToStartRainbowService, EventName.failToStartRainbowService);
         return constants;
     }
 }

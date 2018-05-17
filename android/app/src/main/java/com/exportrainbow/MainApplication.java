@@ -1,7 +1,8 @@
 package com.exportrainbow;
 
-import android.app.Application;
+import android.graphics.Color;
 
+import com.ale.rainbowsdk.RainbowSdk;
 import com.exportrainbow.RainbowManager.RainbowManagerPackage;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -43,5 +44,12 @@ public class MainApplication extends android.support.multidex.MultiDexApplicatio
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+      RainbowSdk.instance().setNotificationBuilder(getApplicationContext(),
+              MainActivity.class,
+              R.drawable.default_contact,
+              getString(R.string.app_name),
+              "Export Rainbow",
+              Color.RED);
+      RainbowSdk.instance().initialize();
   }
 }

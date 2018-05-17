@@ -1,10 +1,10 @@
 package com.exportrainbow.RainbowManager;
 
 public class EventName {
-    static String didLoginRainbow = "DidLoginRainbow";
-    static String didLogoutRainbow = "DidLogoutRainbow";
-    static String didEndPopulatingRainbow = "DidEndPopulatingRainbow";
-    static String failAuthenticationRainbow = "FailAuthenticationRainbow";
+    static String didLoginRainbow = "didLoginRainbow";
+    static String didLogoutRainbow = "didLogoutRainbow";
+    static String didEndPopulatingRainbow = "didEndPopulatingRainbow";
+    static String failAuthenticationRainbow = "failAuthenticationRainbow";
     static String didAddedCachedItems = "didAddedCachedItems";
     static String didRemoveCacheItems = "didRemoveCacheItems";
     static String didReorderCacheItemsAtIndexes = "didReorderCacheItemsAtIndexes";
@@ -17,4 +17,5 @@ public class EventName {
     static String didAllowMicrophone = "DidAllowMicrophone";
     static String didRemoveMicrophone = "DidRemoveMicrophone";
     static String requestAccessMicophone = "requestAccessMicophone";
+    static String failToStartRainbowService = "failToStartRainbowService";
 }

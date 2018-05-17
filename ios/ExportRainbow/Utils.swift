@@ -16,11 +16,12 @@ class HelperMethods: NSObject {
       return [:]
     }
     var dictionary: [String: Any] = [:]
-    dictionary["type"] = conversation.type
-    dictionary["rainbowID"] = conversation.peer.rainbowID
-    dictionary["lastMessage"] = conversation.lastMessage.body
-    dictionary["lastMessageTime"] = conversation.lastMessage.date.timeIntervalSince1970
-    dictionary["lastUpdateDate"] = conversation.lastUpdateDate.timeIntervalSince1970
+    dictionary["peerJId"] = conversation.peer.jid
+    if conversation.lastMessage != nil,
+      conversation.lastUpdateDate != nil{
+      dictionary["lastMessage"] = conversation.lastMessage.body
+      dictionary["lastMessageTime"] = conversation.lastMessage.date.timeIntervalSince1970
+    }
     dictionary["unreadMessagesCount"] = conversation.unreadMessagesCount
     return dictionary
   }
@@ -30,8 +31,7 @@ class HelperMethods: NSObject {
       return [:]
     }
     var dictionary: [String: Any] = [:]
-    dictionary["rainbowID"] = contact.rainbowID
-    dictionary["fullName"] = contact.fullName
+    dictionary["peerJId"] = contact.jid
     dictionary["lastName"] = contact.lastName
     dictionary["firstName"] = contact.firstName
     if contact.photoData != nil {
@@ -39,9 +39,7 @@ class HelperMethods: NSObject {
     }
     dictionary["emailAddress"] = contact.emailAddresses.map{$0.address}
     dictionary["phoneNumber"] = contact.phoneNumbers.map{$0.number}
-    dictionary["title"] = contact.title
     dictionary["jobTitle"] = contact.jobTitle
-    dictionary["address"] = contact.addresses.map{$0.city}
     if contact.presence != nil {
       dictionary["presenceStatus"] = contact.presence.status
     }

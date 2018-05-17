@@ -19,18 +19,18 @@ class ConversationController: NSObject {
   var messagesBrowser: MessagesBrowser!
   weak var eventEmitter: RCTEventEmitter!
   var messagesDictionary: [String: Message] = [:]
-  var id: String!
+  var peerJId: String!
   
-  init(id: NSString) {
+  init(peerJId: NSString) {
     super.init()
-    self.id = id as String
+    self.peerJId = peerJId as String
     guard let serviceMan = ServicesManager.sharedInstance(),
       let contactMan = serviceMan.contactsManagerService,
       let conversationMan = serviceMan.conversationsManagerService else {
         //handle error
         return
     }
-    if let contactIndex = contactMan.contacts.index(where: {$0.rainbowID == self.id}) {
+    if let contactIndex = contactMan.contacts.index(where: {$0.jid == self.peerJId}) {
       self.contact = contactMan.contacts[contactIndex]
     }
     
@@ -40,9 +40,8 @@ class ConversationController: NSObject {
       return
     }
     
-    if let conversationIndex = conversationMan.conversations.index(where: {$0.peer.rainbowID == self.id}) {
-      self.conversation = conversationMan.conversations[conversationIndex]
-    }
+    self.conversation = conversationMan.getConversationWithPeerJID(contact.jid)
+    
     if conversation == nil {
       conversationMan.startConversation(with: contact) { [weak self] (conversation, error) in
         if let error = error {

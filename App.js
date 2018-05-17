@@ -67,6 +67,7 @@ RainbowManager.addEvent('Huy', 'Sai gon', 16)
 //         console.log('date: ' + reminder.date)
 //     }
 // );
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -77,13 +78,25 @@ const instructions = Platform.select({
 type Props = {};
 
 export default class App extends Component<Props> {
-  render() {
+  componentWillMount() {
     console.log(RainbowManager);
-    DeviceEventEmitter.addListener('DidLoginRainbow', function(e: Event) {
+    RainbowManager.loginWith('huylh@dgroup.co','SUGARdatingapp!23');
+    DeviceEventEmitter.addListener(RainbowManager.didLoginRainbow, function(e: Event) {
     // handle event.
-    console.log('wtf event');
-    console.log(e);
+      console.log('DidLoginRainbow');
+      console.log('wtf event');
+      console.log(e);
     });
+    DeviceEventEmitter.addListener(RainbowManager.didLogoutRainbow, function(e: Event) {
+    // handle event.
+      console.log('DidLogOutRainbow');
+      console.log('wtf event');
+      console.log(e);
+    });
+    console.log(DeviceEventEmitter);
+  }
+  render() {
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -97,12 +110,38 @@ export default class App extends Component<Props> {
         </Text>
         <TouchableHighlight
           underlayColor='transparent'
-          style={{backgroundColor: 'red'}}
+          style={{backgroundColor: 'red', marginTop: 20}}
           onPress = {() => {
+            RainbowManager.logOut();
           }}
         >
-          <Text>{`I'M A NEW USER`}</Text>
-          </TouchableHighlight>
+          <Text>{`LogOut`}</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor='transparent'
+          style={{backgroundColor: 'red', marginTop: 20}}
+          onPress = {() => {
+            RainbowManager.getContactList((listContact)=>{
+              console.log('listContact');
+              console.log(listContact);
+            });
+          }}
+        >
+          <Text>{`getContactList`}</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor='transparent'
+          style={{backgroundColor: 'red', marginTop: 20}}
+          onPress = {() => {
+            RainbowManager.getConversations((listConversations)=>{
+              console.log('Conversations');
+              console.log(listConversations);
+              RainbowManager.openConversation(listConversations[1].peerJId);
+            });
+          }}
+        >
+          <Text>{`getlistConversations`}</Text>
+        </TouchableHighlight>
       </View>
     );
   }
